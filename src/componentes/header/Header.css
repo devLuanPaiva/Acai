@@ -1,0 +1,10 @@
+header{
+   display: flex;
+   align-items: center;
+   background-color: #5C1654;
+   justify-content: center;
+   height: 200px;
+}
+header > img{
+    height: 80%; 
+}
