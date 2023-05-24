@@ -56,7 +56,7 @@ const Home = ({ adicionarItem }) => {
                                 <li key={ingIndex}>{ingrediente}</li>
                             ))}
                         </ul>
-                        <p>Valor: R$ {item.valor.toFixed(2)}</p>
+                        <p>Valor: {item.valor.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</p>
                         <button onClick={() => selecionarItem(item)}>Adicionar ao Carrinho</button>
                     </div>
                 ))}
