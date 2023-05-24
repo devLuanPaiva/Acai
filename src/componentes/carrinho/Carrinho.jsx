@@ -1,22 +1,23 @@
-import React from "react";
+import React from 'react';
+import Header from '../header/Header';
+import Momento from '../momentoAtual/Momento';
+import Navegacao from '../navegacao/Navegacao';
 
-const Carrinho = ({ itens, removerItem }) => {
+const Carrinho = ({ itens }) => {
     return (
-        <React.Fragment>
-            <h3>Carrinho de Compras</h3>
-            {itens.length === 0 ? (
-                <p>O carrinho está vazio.</p>
-            ) : (
-                <ul>
-                    {itens.map((item, index) => (
-                        <li key={index}>
-                            {item.nome} - R${item.valor.toFixed(2)}
-                            <button onClick={() => removerItem(item)}>Remover do Carrinho</button>
-                        </li>
-                    ))}
-                </ul>
-            )}
-        </React.Fragment>
+        <div>
+            <Header/>
+            <Momento/>
+            <Navegacao/>
+            <h2>Carrinho:</h2>
+            {itens.map((item, index) => (
+                <div key={index}>
+                    <p>Nome: {item.nome}</p>
+                    {/* <p>Ingredientes: {item.ingredientes.join(', ')}</p> */}
+                    <p>Valor: {item.valor}</p>
+                </div>
+            ))}
+        </div>
     );
 };
 

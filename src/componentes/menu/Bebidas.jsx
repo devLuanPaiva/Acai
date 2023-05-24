@@ -1,24 +1,10 @@
-import React, { useState, createContext, useContext } from "react";
+import React from "react";
 import Header from "../header/Header";
 import Momento from "../momentoAtual/Momento";
 import Navegacao from "../navegacao/Navegacao";
 
-// Criando o contexto do carrinho
-const CarrinhoContext = createContext();
-
-const Bebidas = () => {
-    const [carrinho, setCarrinho] = useState([]);
-
-    const adicionarAoCarrinho = (item) => {
-        setCarrinho([...carrinho, item]);
-    };
-
-    const removerDoCarrinho = (item) => {
-        const novoCarrinho = carrinho.filter((c) => c !== item);
-        setCarrinho(novoCarrinho);
-    };
-
-    const bebidas = [
+const Bebidas = ({ adicionarItem }) => {
+    const itens = [
         { nome: "Água com Gás", valor: 2.5 },
         { nome: "Água sem Gás", valor: 2.0 },
         { nome: "Skol", valor: 5.0 },
@@ -33,47 +19,25 @@ const Bebidas = () => {
         { nome: "Guaraná 2L", valor: 3.5 },
         { nome: "Fanta Laranja 2L", valor: 3.5 },
     ];
-
+    const selecionarItem = (item) => {
+        adicionarItem(item);
+    };
     return (
-        <CarrinhoContext.Provider value={{ carrinho, adicionarAoCarrinho, removerDoCarrinho }}>
             <React.Fragment>
                 <Header />
                 <Momento/>
                 <Navegacao/>
-                <h2>Menu de Bebidas</h2>
+                <h2>Bebidas</h2>
                 <ul>
-                    {bebidas.map((item, index) => (
+                    {itens.map((item, index) => (
                         <li key={index}>
                             <span>{item.nome} - R${item.valor.toFixed(2)}</span>
-                            <button onClick={() => adicionarAoCarrinho(item)}>Adicionar ao Carrinho</button>
+                            <button onClick={() => selecionarItem(item)}>Adicionar ao Carrinho</button>
                         </li>
                     ))}
                 </ul>
-                <Carrinho />
             </React.Fragment>
-        </CarrinhoContext.Provider>
-    );
-};
-
-const Carrinho = () => {
-    const { carrinho, removerDoCarrinho } = useContext(CarrinhoContext);
-
-    return (
-        <React.Fragment>
-            <h3>Carrinho de Compras</h3>
-            {carrinho.length === 0 ? (
-                <p>O carrinho está vazio.</p>
-            ) : (
-                <ul>
-                    {carrinho.map((item, index) => (
-                        <li key={index}>
-                            {item.nome} - R${item.valor.toFixed(2)}
-                            <button onClick={() => removerDoCarrinho(item)}>Remover do Carrinho</button>
-                        </li>
-                    ))}
-                </ul>
-            )}
-        </React.Fragment>
+    
     );
 };
 
