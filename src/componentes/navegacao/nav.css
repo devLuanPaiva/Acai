@@ -1,0 +1,29 @@
+nav {
+    width: 90vw;
+    padding: 5px 0px;
+    position: sticky;
+    margin: 0 auto;
+    top: 10px;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-left: 100px;
+   
+  }
+  .opcoesNav{
+    margin-right: 160px;
+    font-size: 20px;
+   
+    text-decoration: none;
+  }
+  
+  @media screen and (max-width: 600px) {
+    nav {
+      overflow-x: auto;
+      white-space: nowrap;
+      padding-left: 10px; /* Adicione um valor adequado aqui */
+    }
+    .opcoesNav{
+        margin-right: 100px;
+    }
+  }
+  

@@ -2,7 +2,7 @@ import React from 'react';
 import Header from '../header/Header';
 import Momento from '../momentoAtual/Momento';
 import Navegacao from '../navegacao/Navegacao';
-
+import "./MilkShake.css"
 const MilkShake = ({ adicionarItem }) => {
     const itens = [
         {
@@ -32,21 +32,26 @@ const MilkShake = ({ adicionarItem }) => {
     return (
         <React.Fragment>
             <Header />
-            <Momento />
-            <Navegacao />
-            {itens.map((item, index) => (
-                <div key={index}>
-                    <h3>{item.tipo}</h3>
-                    <ul>
-                        {item.opcoes.map((opcao, opcaoIndex) => (
-                            <li key={opcaoIndex}>
-                                {opcao.nome} - {opcao.valor.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})} 
-                                <button onClick={() => selecionarItem(opcao)}> Adicionar ao Carrinho</button>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-            ))}
+            <main>
+                <Momento />
+                <Navegacao />
+                <h2>Menu de Milk Shakes</h2>
+                <section className="milkshakes">
+                    {itens.map((item, index) => (
+                        <div key={index} className='sectionMilks'>
+                            <h3>{item.tipo}</h3>
+                            <ul>
+                                {item.opcoes.map((opcao, opcaoIndex) => (
+                                    <li key={opcaoIndex}>
+                                        {opcao.nome} - {opcao.valor.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}
+                                        <button onClick={() => selecionarItem(opcao)} className="adicionar"> Adicionar ao Carrinho</button>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    ))}
+                </section>
+            </main>
         </React.Fragment>
     );
 };

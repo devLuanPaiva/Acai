@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Header from '../header/Header';
 import Momento from '../momentoAtual/Momento';
 import Navegacao from '../navegacao/Navegacao';
-
+import "./Carrinho.css"
 const Carrinho = ({ itens }) => {
     const [carrinhoItens, setCarrinhoItens] = useState(itens);
     const [valorTotal, setValorTotal] = useState(0);
@@ -35,23 +35,28 @@ const Carrinho = ({ itens }) => {
     };
 
     return (
-        <div>
+        <React.Fragment>
             <Header />
-            <Momento />
-            <Navegacao />
-            <h2>Carrinho:</h2>
-            {carrinhoItens.map((item, index) => (
-                <div key={index}>
-                    <p>Nome: {item.nome}</p>
-                    <p>
-                        Valor: {item.valor.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}
-                    </p>
-                    <button onClick={() => removerItem(index)}>Remover</button>
-                </div>
-            ))}
-            <span>Valor Total: {valorTotal.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</span>
-            <button onClick={enviarMensagemWhatsApp}>Finalizar Compra</button>
-        </div>
+            <main>
+                <Momento />
+                <Navegacao />
+                <h2>Carrinho:</h2>
+                <section className="itensCarrinho">
+                    {carrinhoItens.map((item, index) => (
+                        <div key={index} className='iteeem'>
+                            <h3>{item.nome}</h3>
+                            <p>
+                                Valor: {item.valor.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}
+                            </p>
+                            <button onClick={() => removerItem(index)} className="remover">Remover</button>
+                        </div>
+                    ))}
+                </section>
+                    <span>Valor Total: {valorTotal.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</span>
+                
+                <button onClick={enviarMensagemWhatsApp} className='adicionar'>Finalizar Compra</button>
+            </main>
+        </React.Fragment>
     );
 };
 

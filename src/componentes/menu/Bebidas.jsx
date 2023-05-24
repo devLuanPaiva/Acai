@@ -2,7 +2,7 @@ import React from "react";
 import Header from "../header/Header";
 import Momento from "../momentoAtual/Momento";
 import Navegacao from "../navegacao/Navegacao";
-
+import "./Bebidas.css"
 const Bebidas = ({ adicionarItem }) => {
     const itens = [
         {
@@ -30,7 +30,9 @@ const Bebidas = ({ adicionarItem }) => {
                 {nome: "Pitú - Litro", valor: 12.00},
                 {nome: "Dreher", valor: 32.00},
                 {nome: "Black & White", valor: 55.00},
+                {nome: "Passport Scoth", valor: 55.00},
                 {nome: "Vodka Skyy", valor: 50.00},
+                {nome: "vodka Smirnoff", valor: 70.00},
                 {nome: "Caranguejo Ouro- Lata", valor: 8.00},
                 {nome: "Caranguejo Prata - Lata", valor: 8.00},
                 {nome: "Ypióca - Lata", valor: 8.00},
@@ -44,22 +46,26 @@ const Bebidas = ({ adicionarItem }) => {
     return (
         <React.Fragment>
             <Header />
-            <Momento />
-            <Navegacao />
-            <h2>Menu de Bebidas</h2>
-            {itens.map((item, index) =>(
-                <div key={index}>
-                    <h3>{item.tipo}</h3>
-                    <ul>
-                        {item.opcoes.map((opcao, opcaoIndex) =>(
-                            <li key={opcaoIndex}>
-                                {opcao.nome} - {opcao.valor.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})} 
-                                <button onClick={() => selecionarItem(opcao)}> Adicionar ao Carrinho</button>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-            ))}
+            <main>
+                <Momento />
+                <Navegacao />
+                <h2>Menu de Bebidas</h2>
+                <section className="bebidas">
+                    {itens.map((item, index) =>(
+                        <div key={index} className="sectionBebidas">
+                            <h3>{item.tipo}</h3>
+                            <ul>
+                                {item.opcoes.map((opcao, opcaoIndex) =>(
+                                    <li key={opcaoIndex}>
+                                        {opcao.nome} - {opcao.valor.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}
+                                        <button onClick={() => selecionarItem(opcao)} className="adicionar"> Adicionar ao Carrinho</button>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    ))}
+                </section>
+            </main>
         </React.Fragment>
 
     );

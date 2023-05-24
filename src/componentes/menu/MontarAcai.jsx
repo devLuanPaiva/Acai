@@ -111,9 +111,11 @@ const MontarAcai = () => {
     return (
         <React.Fragment>
             <Header />
-            <Momento />
-            <Navegacao />
-            {renderOptions()}
+            <main>
+                <Momento />
+                <Navegacao />
+                {renderOptions()}
+            </main>
         </React.Fragment>
     );
 };

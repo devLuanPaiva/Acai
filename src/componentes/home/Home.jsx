@@ -6,12 +6,12 @@ import Navegacao from "../navegacao/Navegacao.jsx";
 const Home = ({ adicionarItem }) => {
     const itens = [
         {
-            nome: 'Casadinho',
+            nome: 'Açaí Casadinho',
             ingredientes: ['Leite Condensado', 'Leite em Pó', 'Nutella', 'Creme Ninho', 'Morango'],
             valor: 10.99,
         },
         {
-            nome: 'Crocante',
+            nome: 'Açaí Crocante',
             ingredientes: ['Biscoito Oreo', 'Leite em Pó', 'Leite Condensado', 'Nutella', 'M&M', 'Ovomaltine'],
             valor: 12.99,
         },
@@ -21,12 +21,12 @@ const Home = ({ adicionarItem }) => {
             valor: 11.99,
         },
         {
-            nome: 'Delicia de Chocolate',
+            nome: 'Açaí Delicia de Chocolate',
             ingredientes: ['Ovomaltine', 'Gotas de Chocolate', 'Leite Condensado', 'Choco Ball', 'Biscoito Oreo', 'Creme Ovomaltine'],
             valor: 13.99,
         },
         {
-            nome: 'Sensação',
+            nome: 'Açaí Sensação',
             ingredientes: ['Leite em Pó', 'Ovomaltine', 'Paçoca', 'Morango', 'Nutella', 'Leite Condensado'],
             valor: 9.99,
         },
@@ -44,23 +44,25 @@ const Home = ({ adicionarItem }) => {
     return (
         <React.Fragment>
             <Header />
-            <Momento />
-            <Navegacao />
-            <div>
+            <main>
+                <Momento />
+                <Navegacao />
                 <h2>Açaí no Ponto</h2>
-                {itens.map((item, index) => (
-                    <div key={index}>
-                        <h3>{item.nome}</h3>
-                        <ul>
-                            {item.ingredientes.map((ingrediente, ingIndex) => (
-                                <li key={ingIndex}>{ingrediente}</li>
-                            ))}
-                        </ul>
-                        <p>Valor: {item.valor.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</p>
-                        <button onClick={() => selecionarItem(item)}>Adicionar ao Carrinho</button>
-                    </div>
-                ))}
-            </div>
+                <section className="acaiNoPonto">
+                    {itens.map((item, index) => (
+                        <div key={index} className="acais">
+                            <h3>{item.nome}</h3>
+                            <ul>
+                                {item.ingredientes.map((ingrediente, ingIndex) => (
+                                    <li key={ingIndex}>{ingrediente}</li>
+                                ))}
+                            </ul>
+                            <p>Valor: {item.valor.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</p>
+                            <button onClick={() => selecionarItem(item)} className="adicionar">Adicionar ao Carrinho</button>
+                        </div>
+                    ))}
+                </section>
+            </main>
         </React.Fragment>
     )
 };

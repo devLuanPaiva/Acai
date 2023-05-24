@@ -1,9 +1,37 @@
-nav{
+.acaiNoPonto{
     display: flex;
     justify-content: space-around;
-    
+    max-width: 90vw;
+    margin: 0 auto;
+    flex-flow: row wrap;
+    align-content: space-around;
+    box-sizing: border-box; 
 }
-.opcoesNav{
-    text-decoration: none;
-
+.acais{
+    height: 300px;
+    position: relative;
+    width: 200px;
+    margin: 5px;
+    text-align: center;
+    box-sizing: border-box;
+    background-color: rgba(226, 223, 223, 0.916);
+    border-radius: 10px;
+   
+}
+.acais > p{
+    position: absolute;
+    bottom: 18%;
+    left: 3%;
+}
+.acais > button{
+    position: absolute;
+    bottom: 5%;
+    left: 8%;
+}
+.acais > ul{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    margin-top: -10px;
 }

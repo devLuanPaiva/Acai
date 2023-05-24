@@ -1,0 +1,29 @@
+.milkshakes{
+    display: flex;
+    justify-content: space-around;
+    max-width: 90vw;
+    margin: 0 auto;
+    flex-flow: row wrap;
+    align-content: space-around;
+    box-sizing: border-box;
+    min-height: 550px; 
+}
+.sectionMilks{
+    background-color: rgba(226, 223, 223, 0.916);
+    padding: 10px;
+    border-radius: 20px;
+    box-sizing: border-box;
+}
+.sectionMilks >ul{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    box-sizing: border-box;
+}
+.sectionMilks > ul > li{
+    width: 200px;
+    margin: 10px;
+}
+.sectionMilks button{
+    height: 38px;
+}

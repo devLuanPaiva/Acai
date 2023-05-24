@@ -1,0 +1,53 @@
+.itensCarrinho{
+    display: flex;
+    justify-content: space-around;
+    max-width: 90vw;
+    margin: 0 auto;
+    flex-flow: row wrap;
+    align-content: space-around;
+    padding: 20px;
+    box-sizing: border-box; 
+}
+.iteeem{
+    display: inline-block;
+    width: 200px;
+    margin: 5px;
+    text-align: center;
+    position: relative;
+    min-height: 200px;
+    padding: 10px;
+    box-sizing: border-box; 
+    background-color: rgba(226, 223, 223, 0.916);
+    padding: 5px;
+    border-radius: 10px;
+}
+.iteeem > button{
+    position: absolute;
+    bottom: 5%;
+    left: 25%;
+}
+.iteeem > p{
+    position: absolute;
+    bottom: 20%;
+}
+@media screen and (max-width: 600px){
+    .iteeem{
+        width: 150px;
+        
+    }
+    .iteeem >button{
+        left: 17%;
+    }
+}
+@media screen and (max-width: 400px){
+    .iteeem{
+        width: 100px;
+        font-size: 12px;
+        min-height: 150px;
+    }
+    .iteeem >button{
+        left: 15%;
+        height: 20px;
+        font-size: 10px;
+    }
+}
