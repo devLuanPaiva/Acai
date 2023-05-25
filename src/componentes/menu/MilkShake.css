@@ -6,19 +6,21 @@
     flex-flow: row wrap;
     align-content: space-around;
     box-sizing: border-box;
-    min-height: 550px; 
+    height: 580px;
 }
 .sectionMilks{
     background-color: rgba(226, 223, 223, 0.916);
     padding: 10px;
     border-radius: 20px;
     box-sizing: border-box;
+    font-size: 1em;
 }
 .sectionMilks >ul{
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
     box-sizing: border-box;
+    padding: 0px;
 }
 .sectionMilks > ul > li{
     width: 200px;
@@ -26,4 +28,61 @@
 }
 .sectionMilks button{
     height: 38px;
+}
+@media screen and (max-width: 1000px) {
+    .milkshakes{
+        height: 740px;
+    }
+}
+@media screen and (max-width: 755px) {
+    .milkshakes{
+        height: 950px;
+    }
+}
+@media screen and (max-width: 556px) {
+    .sectionMilks > ul> li{
+        width: 180px;
+
+    }
+}
+@media screen and (max-width: 511px) {
+
+    .sectionMilks > ul> li{
+        width: 160px;
+        font-size: 0.9em;
+
+    }
+    .sectionMilks button{
+        font-size: 13px;
+    }
+}
+@media screen and (max-width: 422px) {
+
+    .sectionMilks > ul> li{
+        width: 140px;
+        font-size: 0.8em;
+
+    }
+    .sectionMilks button{
+        font-size: 11px;
+    }
+}
+@media screen and (max-width: 378px) {
+    .milkshakes{
+        height: 860px;
+    }
+
+    .sectionMilks > ul> li{
+        width: 120px;
+        font-size: 0.7em;
+
+    }
+    .sectionMilks button{
+        font-size: 10px;
+    }
+}
+@media screen and (max-width: 332px) {
+    .milkshakes{
+        height: 1390px;
+    }
 }

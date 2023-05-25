@@ -11,17 +11,17 @@ const MilkShake = ({ adicionarItem }) => {
                 { nome: 'Milk Shake de Morango 400ml', valor: 11.99 },
                 { nome: 'Milk Shake de Ovomaltine 300ml', valor: 9.99 },
                 { nome: 'Milk Shake de Ovomaltine 400ml', valor: 11.99 },
-                { nome: 'Milk Shake de Uva 300ml', valor: 9.99 },
-                { nome: 'Milk Shake de Uva 400ml', valor: 11.99 },
                 { nome: 'Milk Shake de Chocolate 300ml', valor: 9.99 },
                 { nome: 'Milk Shake de Chocolate 400ml', valor: 11.99 },
+                { nome: 'Milk Shake de Uva 300ml', valor: 9.99 },
+                { nome: 'Milk Shake de Uva 400ml', valor: 11.99 },
             ]
         },
         {
             tipo: 'Milk Shake Especial', opcoes: [
-                { nome: 'Milk de Morango + Morango', valor: 13.99 },
-                { nome: 'Milk de Chocolate + Raspas de Chocolate', valor: 13.99 },
-                { nome: 'Milk de Ovomaltine + Ovomaltine em Pó', valor: 13.99 }
+                { nome: 'Milk Shake de Chocolate + Raspas de Chocolate', valor: 13.99 },
+                { nome: 'Milk Shake de Ovomaltine + Ovomaltine em Pó', valor: 13.99 },
+                { nome: 'Milk Shake de Morango + Morango', valor: 13.99 },
             ]
         },
     ]
@@ -43,7 +43,7 @@ const MilkShake = ({ adicionarItem }) => {
                             <ul>
                                 {item.opcoes.map((opcao, opcaoIndex) => (
                                     <li key={opcaoIndex}>
-                                        {opcao.nome} - {opcao.valor.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}
+                                        {opcao.nome} <br /> {opcao.valor.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}
                                         <button onClick={() => selecionarItem(opcao)} className="adicionar"> Adicionar ao Carrinho</button>
                                     </li>
                                 ))}

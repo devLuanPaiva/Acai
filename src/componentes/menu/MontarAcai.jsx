@@ -1,111 +1,60 @@
 import React, { useState } from 'react';
-import Header from "../header/Header";
-import Momento from "../momentoAtual/Momento";
-import Navegacao from "../navegacao/Navegacao";
+import Header from '../header/Header';
+import Momento from '../momentoAtual/Momento';
+import Navegacao from '../navegacao/Navegacao';
+
+const options = [
+    {
+        title: 'Açaí no copo',
+        items: [
+            { size: 'Açaí 300ml', maxAdditions: 3 },
+            { size: 'Açaí 400ml', maxAdditions: 4 },
+            { size: 'Açaí 500ml', maxAdditions: 5 },
+            { size: 'Açaí 700ml', maxAdditions: 7 },
+        ],
+    },
+    {
+        title: 'Açaí na vasilha',
+        items: [
+            { size: 'Açaí 250g', maxAdditions: 4 },
+            { size: 'Açaí 350g', maxAdditions: 5 },
+        ],
+    },
+];
+
+const extras = [
+    'Ovomaltine',
+    'Granola',
+    'Leite em Pó',
+    'Biscoito Oreo',
+    'Gotas de Chocolate',
+    'M&M',
+    'Choco Power',
+    'Choco Ball',
+    'Amendoim Triturado',
+    'Waffle',
+    'Bis',
+];
+
+const fruits = ['Morango', 'Kiwi', 'Uva', 'Banana'];
 
 const MontarAcai = () => {
     const [selectedOption, setSelectedOption] = useState(null);
-    const [selectedAddons, setSelectedAddons] = useState([]);
+    const [selectedExtras, setSelectedExtras] = useState([]);
 
-    const handleOptionChange = (option) => {
+    const handleOptionClick = (option) => {
         setSelectedOption(option);
-        setSelectedAddons([]);
+        setSelectedExtras([]);
     };
 
-    const handleAddonChange = (addon) => {
-        if (selectedAddons.includes(addon)) {
-            setSelectedAddons(selectedAddons.filter((item) => item !== addon));
-        } else {
-            setSelectedAddons([...selectedAddons, addon]);
+    const handleExtraChange = (event) => {
+        const { value } = event.target;
+
+        if (selectedExtras.includes(value)) {
+            setSelectedExtras(selectedExtras.filter((extra) => extra !== value));
+        } else if (selectedExtras.length < selectedOption.maxAdditions) {
+            setSelectedExtras([...selectedExtras, value]);
         }
-    };
-
-    const renderOptions = () => {
-        const options = [
-            {
-                title: 'Açaí no copo',
-                items: [
-                    { size: 'Açaí 300ml', maxAddons: 3 },
-                    { size: 'Açaí 400ml', maxAddons: 4 },
-                    { size: 'Açaí 500ml', maxAddons: 5 },
-                    { size: 'Açaí 700ml', maxAddons: 7 },
-                ],
-            },
-            {
-                title: 'Açaí na vasilha',
-                items: [
-                    { size: 'Açaí 250g', maxAddons: 4 },
-                    { size: 'Açaí 350g', maxAddons: 5 },
-                ],
-            },
-        ];
-
-        return options.map((optionGroup, index) => (
-            <div key={index}>
-                <h3>{optionGroup.title}</h3>
-                {optionGroup.items.map((item, itemIndex) => (
-                    <div key={itemIndex}>
-                        <label>
-                            <input
-                                type="radio"
-                                name="option"
-                                value={item.size}
-                                checked={selectedOption === item.size}
-                                onChange={() => handleOptionChange(item.size)}
-                            />
-                            {item.size}
-                        </label>
-                        {selectedOption === item.size && (
-                            <div>
-                                <p>Escolha até {item.maxAddons} adicionais:</p>
-                                {renderAddons(item.maxAddons)}
-                            </div>
-                        )}
-                    </div>
-                ))}
-            </div>
-        ));
-    };
-
-    const renderAddons = (maxAddons) => {
-        const addons = [
-            'Ovomaltine',
-            'Granola',
-            'Leite em Pó',
-            'Biscoito Oreo',
-            'Gotas de Chocolate',
-            'M&M',
-            'Choco Power',
-            'Choco Ball',
-            'Amendoim Triturado',
-            'Waffle',
-            'Bis',
-            // {frutas: ['Morango', 'Kiwi', 'Uva', 'Banana'], coberturas: ['Morango', 'Caramelo', 'Uva', 'Chocolate', 'Nutella']}
-        ];
-        // const fruits = ['Morango', 'Kiwi', 'Uva', 'Banana'];
-        // const toppings = ['Morango', 'Caramelo', 'Uva', 'Chocolate', 'Nutella'];
-
-        const handleCheckboxChange = (addon) => {
-            handleAddonChange(addon);
-        };
-
-        return (
-            <div>
-                <h4>Complementos:</h4>
-                {addons.map((addon, index) => (
-                    <label key={index}>
-                        <input
-                            type="checkbox"
-                            value={addon}
-                            checked={selectedAddons.includes(addon)}
-                            disabled={selectedAddons.length >= maxAddons && !selectedAddons.includes(addon)}
-                            onChange={() => handleCheckboxChange(addon)}
-                        />
-                        {addon}
-                    </label>
-                ))}
-            </div>
-        );
     };
 
     return (
@@ -114,7 +63,56 @@ const MontarAcai = () => {
             <main>
                 <Momento />
                 <Navegacao />
-                {renderOptions()}
+                <h2>Monte seu Açaí</h2>
+                {options.map((category, index) => (
+                    <div key={index}>
+                        <h3>{category.title}</h3>
+                        {category.items.map((item, index) => (
+                            <div key={index}>
+                                <input
+                                    type="radio"
+                                    name="option"
+                                    id={item.size}
+                                    checked={selectedOption === item}
+                                    onChange={() => handleOptionClick(item)}
+                                />
+                                <label htmlFor={item.size}>{item.size}</label>
+                            </div>
+                        ))}
+                    </div>
+                ))}
+                {selectedOption && (
+                    <div>
+                        <h4>Complementos:</h4>
+                        {extras.map((extra, index) => (
+                            <div key={index}>
+                                <input
+                                    type="checkbox"
+                                    id={extra}
+                                    value={extra}
+                                    checked={selectedExtras.includes(extra)}
+                                    onChange={handleExtraChange}
+                                    disabled={selectedExtras.length >= selectedOption.maxAdditions && !selectedExtras.includes(extra)}
+                                />
+                                <label htmlFor={extra}>{extra}</label>
+                            </div>
+                        ))}
+                        <h4>Frutas:</h4>
+                        {fruits.map((fruit, index) => (
+                            <div key={index}>
+                                <input
+                                    type="checkbox"
+                                    id={fruit}
+                                    value={fruit}
+                                    checked={selectedExtras.includes(fruit)}
+                                    onChange={handleExtraChange}
+                                    disabled={selectedExtras.length >= selectedOption.maxAdditions && !selectedExtras.includes(fruit)}
+                                />
+                                <label htmlFor={fruit}>{fruit}</label>
+                            </div>
+                        ))}
+                    </div>
+                )}
             </main>
         </React.Fragment>
     );

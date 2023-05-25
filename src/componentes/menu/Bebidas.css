@@ -1,27 +1,119 @@
-.bebidas{
+.bebidas {
     display: flex;
     justify-content: space-around;
-    max-width: 90vw;
+    max-width: 95%;
     margin: 0 auto;
     flex-flow: row wrap;
     align-content: space-around;
     box-sizing: border-box;
-    min-height: 800px; 
+    height: 750px;
 }
-.sectionBebidas{
+
+.sectionBebidas {
     background-color: rgba(226, 223, 223, 0.916);
     padding: 10px;
     border-radius: 20px;
     box-sizing: border-box;
 
+
 }
-.sectionBebidas >ul{
+
+.sectionBebidas>ul {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
     box-sizing: border-box;
+    padding: 0px;
 }
-.sectionBebidas > ul > li{
+
+.sectionBebidas>ul>li {
     width: 200px;
     margin: 5px;
+}
+
+@media screen and (max-width: 1205px) {
+    .bebidas {
+        width: 950px;
+    }
+}
+@media screen and (max-width: 1205px) {
+    .bebidas {
+        height: 950px;
+    }
+}
+@media screen and (max-width: 985px) {
+    .bebidas {
+        height: 950px;
+    }
+    .sectionBebidas>ul>li {
+        width: 180px;
+    }
+}
+@media screen and (max-width: 899px) {
+    .sectionBebidas>ul>li {
+        width: 170px;
+    }
+}
+@media screen and (max-width: 856px) {
+    .bebidas {
+        height: 1000px;
+    }
+}
+@media screen and (max-width: 856px) {
+    .bebidas {
+        height: 1100px;
+    }
+}
+@media screen and (max-width: 669px) {
+    .sectionBebidas>ul>li {
+        width: 150px;
+        font-size: 14px;
+    }
+    .sectionBebidas button{
+        font-size: 13px;
+    }
+    .bebidas {
+        height: 1050px;
+    }
+}
+@media screen and (max-width: 604px) {
+    .sectionBebidas>ul>li {
+        width: 140px;
+        font-size: 14px;
+    }
+    .sectionBebidas button{
+        font-size: 12px;
+    }
+    .bebidas {
+        height: 1100px;
+    }
+}
+@media screen and (max-width: 573px) {
+    .sectionBebidas>ul>li {
+        width: 140px;
+        font-size: 14px;
+    }
+    .sectionBebidas button{
+        font-size: 12px;
+    }
+    .bebidas {
+        height: 1100px;
+    }
+}
+@media screen and (max-width: 531.5px) {
+    .bebidas {
+        height: 1450px;
+    }
+}
+@media screen and (max-width: 398px) {
+    .sectionBebidas>ul>li {
+        width: 140px;
+        font-size: 14px;
+    }
+    .sectionBebidas button{
+        font-size: 12px;
+    }
+    .bebidas {
+        height: 2450px;
+    }
 }

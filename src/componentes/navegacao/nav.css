@@ -1,29 +1,45 @@
 nav {
-    width: 90vw;
-    padding: 5px 0px;
-    position: sticky;
-    margin: 0 auto;
-    top: 10px;
+  max-width: 90%;
+  padding: 5px 0px;
+  position: sticky;
+  margin: 0 auto;
+  top: 10px;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding-left: 100px;
+
+}
+
+.opcoesNav {
+  margin-right: 160px;
+  font-size: 20px;
+
+  text-decoration: none;
+}
+
+@media screen and (max-width: 600px) {
+  nav {
     overflow-x: auto;
     white-space: nowrap;
-    padding-left: 100px;
-   
+    padding-left: 10px;
+    /* Adicione um valor adequado aqui */
   }
-  .opcoesNav{
-    margin-right: 160px;
-    font-size: 20px;
-   
-    text-decoration: none;
+
+  .opcoesNav {
+    margin-right: 90px;
+    font-size: 18px;
   }
-  
-  @media screen and (max-width: 600px) {
-    nav {
-      overflow-x: auto;
-      white-space: nowrap;
-      padding-left: 10px; /* Adicione um valor adequado aqui */
-    }
-    .opcoesNav{
-        margin-right: 100px;
-    }
+}
+
+@media screen and (max-width: 450px) {
+  .opcoesNav {
+    margin-right: 40px;
+    font-size: 17px;
   }
-  
+}
+@media screen and (max-width: 350px) {
+  .opcoesNav {
+    margin-right: 30px;
+    font-size: 16px;
+  }
+}

@@ -1,13 +1,14 @@
-.acaiNoPonto{
+.acaiNoPonto {
     display: flex;
     justify-content: space-around;
     max-width: 90vw;
     margin: 0 auto;
     flex-flow: row wrap;
     align-content: space-around;
-    box-sizing: border-box; 
+    box-sizing: border-box;
 }
-.acais{
+
+.acais {
     height: 300px;
     position: relative;
     width: 200px;
@@ -16,22 +17,65 @@
     box-sizing: border-box;
     background-color: rgba(226, 223, 223, 0.916);
     border-radius: 10px;
-   
+
 }
-.acais > p{
+
+.acais>p {
     position: absolute;
     bottom: 18%;
     left: 3%;
 }
-.acais > button{
+
+.acais>button {
     position: absolute;
     bottom: 5%;
     left: 8%;
 }
-.acais > ul{
+
+.acais>ul {
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 0px;
-    margin-top: -10px;
+    margin-top: 10px;
+}
+
+
+@media screen and (max-width: 450px) {
+    .acais {
+        height: 250px;
+        width: 150px;
+    }
+
+    .acais>h3 {
+        font-size: 15px;
+    }
+
+    .acais>p {
+        font-size: 13px;
+        left: 7%;
+    }
+
+    .acais li {
+        font-size: 13px;
+    }
+
+    .acais>button {
+        font-size: 13px;
+        left: 4%;
+        margin-left: 0px;
+    }
+
+}
+
+@media screen and (max-width: 350px) {
+    .acais {
+        height: 240px;
+        width: 140px;
+    }
+
+    .acais>button {
+        left: 10%;
+        width: 110px;
+    }
 }
