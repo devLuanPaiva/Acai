@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Header from '../header/Header';
 import Momento from '../momentoAtual/Momento';
 import Navegacao from '../navegacao/Navegacao';
@@ -7,45 +7,61 @@ const options = [
     {
         title: 'Açaí no copo',
         items: [
-            { size: 'Açaí 300ml', maxAdditions: 3 },
-            { size: 'Açaí 400ml', maxAdditions: 4 },
-            { size: 'Açaí 500ml', maxAdditions: 5 },
-            { size: 'Açaí 700ml', maxAdditions: 7 },
+            { size: 'Açaí 300ml ', maxAdditions: 3, valor: 8.50 },
+            { size: 'Açaí 400ml ', maxAdditions: 4, valor: 9.50 },
+            { size: 'Açaí 500ml ', maxAdditions: 5, valor: 11.99 },
+            { size: 'Açaí 700ml ', maxAdditions: 7, valor: 13.99 },
         ],
     },
     {
         title: 'Açaí na vasilha',
         items: [
-            { size: 'Açaí 250g', maxAdditions: 4 },
-            { size: 'Açaí 350g', maxAdditions: 5 },
+            { size: 'Açaí 250g', maxAdditions: 4, valor: 7.50 },
+            { size: 'Açaí 350g', maxAdditions: 5, valor: 8.50 },
         ],
     },
 ];
 
 const extras = [
-    'Ovomaltine',
-    'Granola',
-    'Leite em Pó',
-    'Biscoito Oreo',
-    'Gotas de Chocolate',
-    'M&M',
-    'Choco Power',
-    'Choco Ball',
-    'Amendoim Triturado',
-    'Waffle',
-    'Bis',
+    ' Ovomaltine',
+    ' Granola',
+    ' Leite em Pó',
+    ' Biscoito Oreo',
+    ' Gotas de Chocolate',
+    ' M&M',
+    ' Choco Power',
+    ' Choco Ball',
+    ' Amendoim Triturado',
+    ' Waffle',
+    ' Bis',
 ];
 
-const fruits = ['Morango', 'Kiwi', 'Uva', 'Banana'];
-
+const fruits = [' Morango', ' Kiwi', ' Uva', ' Banana'];
+const cremes = [
+    {
+        title: 'Cremes',
+        items: [
+            { nome: 'Creme Oreo ', valor: 2.50 },
+            { nome: 'Creme Ninho ', valor: 2.50 },
+            { nome: 'Creme Ovomaltine ', valor: 2.50 },
+            { nome: 'Creme Cookies ', valor: 2.50 },
+        ]
+    }
+]
 const MontarAcai = () => {
     const [selectedOption, setSelectedOption] = useState(null);
     const [selectedExtras, setSelectedExtras] = useState([]);
+    const [selectedCremes, setSelectedCremes] = useState(null)
+    const [acaiMontado, setAcaiMontado] = useState(null)
 
     const handleOptionClick = (option) => {
         setSelectedOption(option);
         setSelectedExtras([]);
+       
     };
+    const handleCreme = (opcao) => {
+        setSelectedCremes(opcao)
+    }
 
     const handleExtraChange = (event) => {
         const { value } = event.target;
@@ -56,7 +72,30 @@ const MontarAcai = () => {
             setSelectedExtras([...selectedExtras, value]);
         }
     };
-
+    
+    useEffect(() => {
+        const acai = () => {
+            const dados = {
+                selectedOption: selectedOption,
+                selectedExtras: selectedExtras,
+                selectedCremes: selectedCremes
+              };
+              setAcaiMontado(dados)
+        }
+        acai()
+    }, [selectedOption, selectedExtras, selectedCremes])
+    const enviarAcai = () => {
+        console.log(acaiMontado);
+        const mensagem = `AÇAÍ MONTADO: \n\n Tipo: ${acaiMontado.selectedOption.size}\n Adicionais: ${acaiMontado.selectedExtras} \n`;
+        let mensagemCreme = '';
+        if (acaiMontado.selectedCremes != null) {
+            mensagemCreme = `Creme: ${acaiMontado.selectedCremes.nome}`;
+        }
+        const numeroWhatsApp = '+558498088539';
+        const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem + mensagemCreme)}`;
+        window.open(url, '_blank');
+    }
+    
     return (
         <React.Fragment>
             <Header />
@@ -76,8 +115,26 @@ const MontarAcai = () => {
                                     checked={selectedOption === item}
                                     onChange={() => handleOptionClick(item)}
                                 />
-                                <label htmlFor={item.size}>{item.size}</label>
+                                <label htmlFor={item.size}>{item.size} - {item.valor.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</label>
                             </div>
+                        ))}
+                    </div>
+                ))}
+                {cremes.map((categoryCreme, indexCreme) => (
+                    <div key={indexCreme}>
+                        <h3>{categoryCreme.title}</h3>
+                        {categoryCreme.items.map((itemCreme, indexCreme) => (
+                            <div key={indexCreme}>
+                                <input
+                                    type="radio"
+                                    name='opcao'
+                                    id={itemCreme.nome}
+                                    checked = {selectedCremes === itemCreme}
+                                    onChange={() => handleCreme(itemCreme)}
+                                />
+                                <label htmlFor={itemCreme.nome}>{itemCreme.nome} - {itemCreme.valor.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</label>
+                            </div>
+
                         ))}
                     </div>
                 ))}
@@ -113,6 +170,7 @@ const MontarAcai = () => {
                         ))}
                     </div>
                 )}
+                <button onClick={enviarAcai}>Enviar Açaí</button>
             </main>
         </React.Fragment>
     );

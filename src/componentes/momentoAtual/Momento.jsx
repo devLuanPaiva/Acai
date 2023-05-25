@@ -66,7 +66,7 @@ class Momento extends React.Component {
                     <li><span className="horarios"> Sábado e Domingo - 10:00 às 22:00</span></li>
                 </ul>
                
-                <span style={{ backgroundColor: isOpen ? 'green' : 'red', color: 'white' }}>{isOpen ? 'Aberto!' : 'Fechado!'}</span>
+                <span style={{ backgroundColor: isOpen ? 'green' : 'red', color: 'white', padding: '5px' }}>{isOpen ? 'Aberto!' : 'Fechado!'}</span>
             </div>
         );
     }
