@@ -3,6 +3,7 @@ import Header from '../header/Header';
 import Momento from '../momentoAtual/Momento';
 import Navegacao from '../navegacao/Navegacao';
 import "./Carrinho.css"
+import Footer from '../footer/Footer';
 const Carrinho = ({ itens }) => {
     const [carrinhoItens, setCarrinhoItens] = useState(itens);
     const [valorTotal, setValorTotal] = useState(0);
@@ -56,6 +57,7 @@ const Carrinho = ({ itens }) => {
                 
                 <button onClick={enviarMensagemWhatsApp} className='adicionar'>Finalizar Compra</button>
             </main>
+            <Footer/>
         </React.Fragment>
     );
 };

@@ -1,5 +1,48 @@
-.HorariosFuncionamento{
-    display: flex;
-    align-items: flex-start;
-    flex-direction: column;
+/* Momentos.css */
+
+.HorariosFuncionamento {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.HorariosFuncionamento h2 {
+  color: #333;
+  font-size: 20px;
+  
+}
+
+.HorariosFuncionamento ul {
+  list-style: none;
+  padding: 0;
+}
+
+.horarios {
+  font-weight: bold;
+}
+
+.HorariosFuncionamento span {
+  display: inline-block;
+  
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 5px;
+  text-transform: uppercase;
+}
+
+.HorariosFuncionamento span[data-status="aberto"] {
+  background-color: green;
+  color: white;
+}
+
+.HorariosFuncionamento span[data-status="fechado"] {
+  background-color: red;
+  color: white;
+}
+@media(max-width: 400px){
+  .HorariosFuncionamento h2 {
+    font-size: 18px;
+  }
+  .HorariosFuncionamento li{
+    font-size: 15px;
+  }
 }

@@ -1,88 +1,60 @@
-.milkshakes{
-    display: flex;
-    justify-content: space-around;
-    max-width: 90vw;
-    margin: 0 auto;
-    flex-flow: row wrap;
-    align-content: space-around;
-    box-sizing: border-box;
-    height: 580px;
-}
-.sectionMilks{
-    background-color: rgba(226, 223, 223, 0.916);
-    padding: 10px;
-    border-radius: 20px;
-    box-sizing: border-box;
-    font-size: 1em;
-}
-.sectionMilks >ul{
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
-    box-sizing: border-box;
-    padding: 0px;
-}
-.sectionMilks > ul > li{
-    width: 200px;
-    margin: 10px;
-}
-.sectionMilks button{
-    height: 38px;
-}
-@media screen and (max-width: 1000px) {
-    .milkshakes{
-        height: 740px;
-    }
-}
-@media screen and (max-width: 755px) {
-    .milkshakes{
-        height: 950px;
-    }
-}
-@media screen and (max-width: 556px) {
-    .sectionMilks > ul> li{
-        width: 180px;
+.milkshakes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: row;
 
-    }
 }
-@media screen and (max-width: 511px) {
 
-    .sectionMilks > ul> li{
-        width: 160px;
-        font-size: 0.9em;
-
-    }
-    .sectionMilks button{
-        font-size: 13px;
-    }
+.sectionMilks {
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+  display: inline-block;
+  max-width: 920px;
+  text-align: center;
+  /* Centralizar o conteúdo */
 }
-@media screen and (max-width: 422px) {
 
-    .sectionMilks > ul> li{
-        width: 140px;
-        font-size: 0.8em;
-
-    }
-    .sectionMilks button{
-        font-size: 11px;
-    }
+.sectionMilks h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #666;
+  border-bottom: 1px solid #ccc;
 }
-@media screen and (max-width: 378px) {
-    .milkshakes{
-        height: 860px;
-    }
 
-    .sectionMilks > ul> li{
-        width: 120px;
-        font-size: 0.7em;
+.sectionMilks ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 10px;
+}
 
-    }
-    .sectionMilks button{
-        font-size: 10px;
-    }
+.sectionMilks li {
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
 }
-@media screen and (max-width: 332px) {
-    .milkshakes{
-        height: 1390px;
-    }
+
+.sectionMilks li:hover {
+  background-color: #f0f0f0;
 }
+
+.sectionMilks li button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.sectionMilks li button:hover {
+  background-color: #45a049;
+}
+

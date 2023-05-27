@@ -62,7 +62,7 @@ class Momento extends React.Component {
             <div className='HorariosFuncionamento'>
                 <h2>Horários de Funcionamento:</h2>
                 <ul>
-                    <li><span className="horarios">Segunda à Sexta - 10:30 às 21:30</span></li>
+                    <li><span className="horarios">Segunda a Sexta - 10:30 às 21:30</span></li>
                     <li><span className="horarios"> Sábado e Domingo - 10:00 às 22:00</span></li>
                 </ul>
                

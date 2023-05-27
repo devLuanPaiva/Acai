@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import Header from '../header/Header';
 import Momento from '../momentoAtual/Momento';
 import Navegacao from '../navegacao/Navegacao';
-
+import "./MontarAcai.css"
+import Footer from '../footer/Footer';
 const options = [
     {
         title: 'Açaí no copo',
@@ -86,7 +87,7 @@ const MontarAcai = () => {
     }, [selectedOption, selectedExtras, selectedCremes])
     const enviarAcai = () => {
         console.log(acaiMontado);
-        const mensagem = `AÇAÍ MONTADO: \n\n Tipo: ${acaiMontado.selectedOption.size}\n Adicionais: ${acaiMontado.selectedExtras} \n`;
+        const mensagem = `AÇAÍ MONTADO: \n\nTipo: ${acaiMontado.selectedOption.size}\nAdicionais: ${acaiMontado.selectedExtras} \n`;
         let mensagemCreme = '';
         if (acaiMontado.selectedCremes != null) {
             mensagemCreme = `Creme: ${acaiMontado.selectedCremes.nome}`;
@@ -99,27 +100,27 @@ const MontarAcai = () => {
     return (
         <React.Fragment>
             <Header />
-            <main>
+            <main className='montarAcai'>
                 <Momento />
                 <Navegacao />
                 <h2>Monte seu Açaí</h2>
-                {options.map((category, index) => (
-                    <div key={index}>
-                        <h3>{category.title}</h3>
-                        {category.items.map((item, index) => (
-                            <div key={index}>
-                                <input
-                                    type="radio"
-                                    name="option"
-                                    id={item.size}
-                                    checked={selectedOption === item}
-                                    onChange={() => handleOptionClick(item)}
-                                />
-                                <label htmlFor={item.size}>{item.size} - {item.valor.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</label>
-                            </div>
-                        ))}
-                    </div>
-                ))}
+                    {options.map((category, index) => (
+                        <div key={index} >
+                            <h3>{category.title}</h3>
+                            {category.items.map((item, index) => (
+                                <div key={index}>
+                                    <input
+                                        type="radio"
+                                        name="option"
+                                        id={item.size}
+                                        checked={selectedOption === item}
+                                        onChange={() => handleOptionClick(item)}
+                                    />
+                                    <label htmlFor={item.size}>{item.size} - Escolha até {item.maxAdditions} Adicionais - {item.valor.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</label>
+                                </div>
+                            ))}
+                        </div>
+                    ))}
                 {cremes.map((categoryCreme, indexCreme) => (
                     <div key={indexCreme}>
                         <h3>{categoryCreme.title}</h3>
@@ -172,6 +173,7 @@ const MontarAcai = () => {
                 )}
                 <button onClick={enviarAcai}>Enviar Açaí</button>
             </main>
+            <Footer/>
         </React.Fragment>
     );
 };

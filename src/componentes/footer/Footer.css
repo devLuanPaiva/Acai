@@ -1,0 +1,29 @@
+/* Footer.css */
+
+footer {
+
+  background-color: #5C1654;
+  padding: 20px;
+  text-align: center;
+}
+
+footer span {
+  color: #fff;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+footer .redes {
+  margin-top: 20px;
+}
+
+footer .redes a {
+  display: inline-block;
+  margin-right: 10px;
+  color: #fff;
+  font-size: 20px;
+}
+
+footer .redes a:hover {
+  color: #555555;
+}

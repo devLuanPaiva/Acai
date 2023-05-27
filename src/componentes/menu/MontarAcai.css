@@ -1,0 +1,71 @@
+
+.montarAcai h2 {
+    color: #333;
+}
+
+.montarAcai h3 {
+    color: #666;
+}
+
+.montarAcai h4 {
+    color: #999;
+    margin-top: 20px;
+}
+
+.montarAcai input[type="radio"],
+.montarAcai input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.montarAcai label {
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.montarAcai button {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+/* Estilos específicos para os elementos da página */
+.montarAcai h2,
+.montarAcai h3,
+.montarAcai h4 {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+}
+
+.montarAcai input[type="radio"]:checked+label,
+.montarAcai input[type="checkbox"]:checked+label {
+    font-weight: bold;
+}
+
+.montarAcai input[type="radio"]:checked+label:before,
+.montarAcai input[type="checkbox"]:checked+label:before {
+    margin-right: 5px;
+}
+
+.montarAcai input[type="radio"]:checked+label,
+.montarAcai input[type="checkbox"]:checked+label {
+    color: #333;
+}
+
+.montarAcai input[type="checkbox"]:disabled+label,
+.montarAcai input[type="radio"]:disabled+label {
+    color: #ccc;
+    cursor: not-allowed;
+}
+
+.montarAcai button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}

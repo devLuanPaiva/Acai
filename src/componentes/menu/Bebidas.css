@@ -1,119 +1,58 @@
 .bebidas {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
-    max-width: 95%;
-    margin: 0 auto;
-    flex-flow: row wrap;
-    align-content: space-around;
-    box-sizing: border-box;
-    height: 750px;
+    flex-direction: row;
 }
 
 .sectionBebidas {
-    background-color: rgba(226, 223, 223, 0.916);
-    padding: 10px;
-    border-radius: 20px;
-    box-sizing: border-box;
-
-
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    display: inline-block;
+    max-width: 920px;
+    text-align: center;
+    /* Centralizar o conteúdo */
 }
 
-.sectionBebidas>ul {
+.sectionBebidas h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #666;
+    border-bottom: 1px solid #ccc;
+}
+
+.sectionBebidas ul {
     display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    box-sizing: border-box;
-    padding: 0px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 10px;
 }
 
-.sectionBebidas>ul>li {
-    width: 200px;
-    margin: 5px;
+.sectionBebidas li {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
-@media screen and (max-width: 1205px) {
-    .bebidas {
-        width: 950px;
-    }
+.sectionBebidas li:hover {
+    background-color: #f0f0f0;
 }
-@media screen and (max-width: 1205px) {
-    .bebidas {
-        height: 950px;
-    }
+
+.sectionBebidas li button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    cursor: pointer;
 }
-@media screen and (max-width: 985px) {
-    .bebidas {
-        height: 950px;
-    }
-    .sectionBebidas>ul>li {
-        width: 180px;
-    }
-}
-@media screen and (max-width: 899px) {
-    .sectionBebidas>ul>li {
-        width: 170px;
-    }
-}
-@media screen and (max-width: 856px) {
-    .bebidas {
-        height: 1000px;
-    }
-}
-@media screen and (max-width: 856px) {
-    .bebidas {
-        height: 1100px;
-    }
-}
-@media screen and (max-width: 669px) {
-    .sectionBebidas>ul>li {
-        width: 150px;
-        font-size: 14px;
-    }
-    .sectionBebidas button{
-        font-size: 13px;
-    }
-    .bebidas {
-        height: 1050px;
-    }
-}
-@media screen and (max-width: 604px) {
-    .sectionBebidas>ul>li {
-        width: 140px;
-        font-size: 14px;
-    }
-    .sectionBebidas button{
-        font-size: 12px;
-    }
-    .bebidas {
-        height: 1100px;
-    }
-}
-@media screen and (max-width: 573px) {
-    .sectionBebidas>ul>li {
-        width: 140px;
-        font-size: 14px;
-    }
-    .sectionBebidas button{
-        font-size: 12px;
-    }
-    .bebidas {
-        height: 1100px;
-    }
-}
-@media screen and (max-width: 531.5px) {
-    .bebidas {
-        height: 1450px;
-    }
-}
-@media screen and (max-width: 398px) {
-    .sectionBebidas>ul>li {
-        width: 140px;
-        font-size: 14px;
-    }
-    .sectionBebidas button{
-        font-size: 12px;
-    }
-    .bebidas {
-        height: 2450px;
-    }
+
+.sectionBebidas li button:hover {
+    background-color: #45a049;
 }
