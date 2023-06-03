@@ -47,6 +47,9 @@ nav {
     margin-right: 40px;
     font-size: 17px;
   }
+  .navbar-container{
+    padding-left: 0px;
+  }
 }
 
 @media screen and (max-width: 350px) {
