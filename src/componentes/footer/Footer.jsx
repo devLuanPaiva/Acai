@@ -10,7 +10,7 @@ const Footer = () => {
                 </span>
                 <div className="redes">
                     <a href="https://www.instagram.com/_acaidoboom/"><BsInstagram className="iconColor" /></a>
-                    <a href="https://l.instagram.com/?u=https%3A%2F%2Fapi.whatsapp.com%2Fsend%3Fphone%3D5584998088539%26text%3DOl%25C3%25A1%252C%2Bgostaria%2Bde%2Bfazer%2Bum%2Bpedido%2B&e=AT0qazSxebGRNnJP29mrhR_uwRcTJqaP9-LmCmnYIeseRUixDvowDeqNBFE85_OrSLKdFXg6CT1KNinXBqePd9kD9S0ocl1arPPuwQ"><BsWhatsapp className="iconColor" /></a>
+                    <a href="https://api.whatsapp.com/send?phone=5584998088539&text=Ol%C3%A1,%20gostaria%20de%20fazer%20um%20pedido."><BsWhatsapp className="iconColor" /></a>
                 </div>
             </footer>
         </React.Fragment>

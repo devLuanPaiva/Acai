@@ -8,17 +8,17 @@ const options = [
     {
         title: 'Açaí no copo',
         items: [
-            { size: 'Açaí 300ml ', maxAdditions: 3, valor: 8.50 },
-            { size: 'Açaí 400ml ', maxAdditions: 4, valor: 9.50 },
-            { size: 'Açaí 500ml ', maxAdditions: 5, valor: 11.99 },
-            { size: 'Açaí 700ml ', maxAdditions: 7, valor: 13.99 },
+            { size: 'Açaí 300ml ', maxAdditions: 3, valor: 9.00 },
+            { size: 'Açaí 400ml ', maxAdditions: 4, valor: 12.00 },
+            { size: 'Açaí 500ml ', maxAdditions: 5, valor: 14.00 },
+            { size: 'Açaí 700ml ', maxAdditions: 7, valor: 20.00 },
         ],
     },
     {
         title: 'Açaí na vasilha',
         items: [
-            { size: 'Açaí 250g', maxAdditions: 4, valor: 7.50 },
-            { size: 'Açaí 350g', maxAdditions: 5, valor: 8.50 },
+            { size: 'Açaí 250g', maxAdditions: 4, valor: 10.00 },
+            { size: 'Açaí 350g', maxAdditions: 5, valor: 13.00 },
         ],
     },
 ];
@@ -42,10 +42,10 @@ const cremes = [
     {
         title: 'Cremes',
         items: [
-            { nome: 'Creme Oreo ', valor: 2.50 },
-            { nome: 'Creme Ninho ', valor: 2.50 },
-            { nome: 'Creme Ovomaltine ', valor: 2.50 },
-            { nome: 'Creme Cookies ', valor: 2.50 },
+            { nome: 'Creme Oreo ', valor: 10.00 },
+            { nome: 'Creme Ninho ', valor: 10.00 },
+            { nome: 'Creme Ovomaltine ', valor: 10.00 },
+            { nome: 'Creme Cookies ', valor: 10.00 },
         ]
     }
 ]

@@ -14,16 +14,26 @@ footer span {
 }
 
 footer .redes {
+  margin: 0 auto;
   margin-top: 20px;
+  width: 20vw;
+  display: flex;
+  justify-content: space-around;
+
 }
 
 footer .redes a {
   display: inline-block;
-  margin-right: 10px;
   color: #fff;
   font-size: 20px;
 }
 
 footer .redes a:hover {
   color: #555555;
+}
+
+@media(max-width: 501px) {
+  footer .redes {
+    width: 60vw;
+  }
 }

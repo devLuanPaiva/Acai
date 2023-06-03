@@ -16,9 +16,9 @@ const Navegacao = () => {
           <Link className="opcoesNav" to="/milk-shake">
             Milk Shake
           </Link>
-          <Link className="opcoesNav" to="/bebidas">
+          {/* <Link className="opcoesNav" to="/bebidas">
             Bebidas
-          </Link>
+          </Link> */}
           <Link className="opcoesNav" to="/carrinho">
             Carrinho
           </Link>

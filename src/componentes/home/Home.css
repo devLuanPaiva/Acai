@@ -28,10 +28,14 @@
     list-style-type: none;
     padding: 0;
     margin-bottom: 10px;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .acais li {
     margin-bottom: 5px;
+    margin-left: 5px;
+    text-align: left;
 }
 
 .acais p {
@@ -52,4 +56,16 @@
 
 .acais button:hover {
     background-color: #45a049;
+}
+.ingredientesImagem{
+    display: flex;
+    max-width: 100%;
+    align-items: center; 
+    align-content: flex-end;
+    justify-content: space-around;
+}
+.acais img{
+    width: 50px;
+    height: 60px;
+    
 }
