@@ -42,10 +42,10 @@ const cremes = [
     {
         title: 'Cremes',
         items: [
-            { nome: 'Creme Oreo ', valor: 10.00 },
-            { nome: 'Creme Ninho ', valor: 10.00 },
-            { nome: 'Creme Ovomaltine ', valor: 10.00 },
-            { nome: 'Creme Cookies ', valor: 10.00 },
+            { nome: 'Creme Oreo ' },
+            { nome: 'Creme Ninho ' },
+            { nome: 'Creme Ovomaltine ' },
+            { nome: 'Creme Cookies ' },
         ]
     }
 ]
@@ -58,7 +58,7 @@ const MontarAcai = () => {
     const handleOptionClick = (option) => {
         setSelectedOption(option);
         setSelectedExtras([]);
-       
+
     };
     const handleCreme = (opcao) => {
         setSelectedCremes(opcao)
@@ -73,15 +73,15 @@ const MontarAcai = () => {
             setSelectedExtras([...selectedExtras, value]);
         }
     };
-    
+
     useEffect(() => {
         const acai = () => {
             const dados = {
                 selectedOption: selectedOption,
                 selectedExtras: selectedExtras,
                 selectedCremes: selectedCremes
-              };
-              setAcaiMontado(dados)
+            };
+            setAcaiMontado(dados)
         }
         acai()
     }, [selectedOption, selectedExtras, selectedCremes])
@@ -90,13 +90,13 @@ const MontarAcai = () => {
         const mensagem = `AÇAÍ MONTADO: \n\nTipo: ${acaiMontado.selectedOption.size}\nAdicionais: ${acaiMontado.selectedExtras}\nValor: ${acaiMontado.selectedOption.valor.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}  \n\n`;
         let mensagemCreme = '';
         if (acaiMontado.selectedCremes != null) {
-            mensagemCreme = `Creme: ${acaiMontado.selectedCremes.nome}\nValor: ${acaiMontado.selectedCremes.valor.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`;
+            mensagemCreme = `Creme: ${acaiMontado.selectedCremes.nome}\n`;
         }
         const numeroWhatsApp = '+558498088539';
         const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem + mensagemCreme)}`;
         window.open(url, '_blank');
     }
-    
+
     return (
         <React.Fragment>
             <Header />
@@ -104,41 +104,24 @@ const MontarAcai = () => {
                 <Momento />
                 <Navegacao />
                 <h2>Monte seu Açaí</h2>
-                    {options.map((category, index) => (
-                        <div key={index} >
-                            <h3>{category.title}</h3>
-                            {category.items.map((item, index) => (
-                                <div key={index}>
-                                    <input
-                                        type="radio"
-                                        name="option"
-                                        id={item.size}
-                                        checked={selectedOption === item}
-                                        onChange={() => handleOptionClick(item)}
-                                    />
-                                    <label htmlFor={item.size}>{item.size} - Escolha até {item.maxAdditions} Adicionais - {item.valor.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</label>
-                                </div>
-                            ))}
-                        </div>
-                    ))}
-                {cremes.map((categoryCreme, indexCreme) => (
-                    <div key={indexCreme}>
-                        <h3>{categoryCreme.title}</h3>
-                        {categoryCreme.items.map((itemCreme, indexCreme) => (
-                            <div key={indexCreme}>
+                {options.map((category, index) => (
+                    <div key={index} >
+                        <h3>{category.title}</h3>
+                        {category.items.map((item, index) => (
+                            <div key={index}>
                                 <input
                                     type="radio"
-                                    name='opcao'
-                                    id={itemCreme.nome}
-                                    checked = {selectedCremes === itemCreme}
-                                    onChange={() => handleCreme(itemCreme)}
+                                    name="option"
+                                    id={item.size}
+                                    checked={selectedOption === item}
+                                    onChange={() => handleOptionClick(item)}
                                 />
-                                <label htmlFor={itemCreme.nome}>{itemCreme.nome} - {itemCreme.valor.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</label>
+                                <label htmlFor={item.size}>{item.size} - Escolha até {item.maxAdditions} Adicionais - {item.valor.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</label>
                             </div>
-
                         ))}
                     </div>
                 ))}
+
                 {selectedOption && (
                     <div>
                         <h4>Complementos:</h4>
@@ -169,12 +152,31 @@ const MontarAcai = () => {
                                 <label htmlFor={fruit}>{fruit}</label>
                             </div>
                         ))}
+                        {cremes.map((categoryCreme, indexCreme) => (
+                            <div key={indexCreme}>
+                                <h3>{categoryCreme.title}</h3>
+                                {categoryCreme.items.map((itemCreme, indexCreme) => (
+                                    <div key={indexCreme}>
+                                        <input
+                                            type="radio"
+                                            name='opcao'
+                                            id={itemCreme.nome}
+                                            checked={selectedCremes === itemCreme}
+                                            onChange={() => handleCreme(itemCreme)}
+                                        />
+                                        <label htmlFor={itemCreme.nome}>{itemCreme.nome} - {itemCreme.valor.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</label>
+                                    </div>
+
+                                ))}
+                            </div>
+                        ))}
                     </div>
+
                 )}
                 <button onClick={enviarAcai}>Enviar Açaí</button>
                 <p>OBS: O açaí montado não vai para o carrinho, ele vai direto para o nosso Whatsapp.</p>
             </main>
-            <Footer/>
+            <Footer />
         </React.Fragment>
     );
 };

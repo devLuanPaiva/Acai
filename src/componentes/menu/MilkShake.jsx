@@ -9,13 +9,13 @@ const MilkShake = ({ adicionarItem }) => {
         {
             tipo: 'Milk Shake', opcoes: [
                 // { nome: 'Milk Shake de Morango 300ml', valor: 9.99, quantidade: 1},
-                { nome: 'Milk Shake de Morango 400ml', valor: 11.99, quantidade: 1 },
+                { nome: 'Milk Shake de Morango 400ml', valor: 10.00, quantidade: 1 },
                 // { nome: 'Milk Shake de Ovomaltine 300ml', valor: 9.99 , quantidade: 1},
-                { nome: 'Milk Shake de Ovomaltine 400ml', valor: 11.99, quantidade: 1 },
+                { nome: 'Milk Shake de Ovomaltine 400ml', valor: 10.00, quantidade: 1 },
                 // { nome: 'Milk Shake de Chocolate 300ml', valor: 9.99, quantidade: 1},
-                { nome: 'Milk Shake de Chocolate 400ml', valor: 11.99, quantidade: 1 },
+                { nome: 'Milk Shake de Chocolate 400ml', valor: 10.00, quantidade: 1 },
                 // { nome: 'Milk Shake de Uva 300ml', valor: 9.99, quantidade: 1},
-                { nome: 'Milk Shake de Uva 400ml', valor: 11.99, quantidade: 1 },
+                { nome: 'Milk Shake de Uva 400ml', valor: 10.00, quantidade: 1 },
             ]
         },
         {

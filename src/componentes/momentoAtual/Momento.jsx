@@ -1,55 +1,75 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import "./Momentos.css"
-const Momento = () => {
-    const [date, setDate] = useState(new Date());
-    const [isOpen, setIsOpen] = useState(false);
-
-    useEffect(() => {
-        const timerID = setInterval(() => tick(), 1000);
-
-        return () => {
-            clearInterval(timerID);
+class Momento extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            isOpen: false
         };
-    });
+    }
 
-    const tick = () => {
-        setDate(new Date());
-        setIsOpen(checkIfOpen(date));
-    };
+    componentDidMount() {
+        this.verificarStatusHorario();
+        // Verificar o status do horário assim que o componente for montado
+    }
 
-    const checkIfOpen = (date) => {
-        const day = date.getDay();
-        const hours = date.getHours();
-        const minutes = date.getMinutes();
-
-        // Verificar se é sábado ou domingo
-        if (day === 0 || day === 6) {
-            if ((hours === 10 && minutes >= 0) || (hours === 22 && minutes === 0)) {
-                return true;
+    verificarStatusHorario() {
+        const dataAtual = new Date();
+        const diaSemana = dataAtual.getDay();
+        const hora = dataAtual.getHours();
+        const minutos = dataAtual.getMinutes();
+        console.log(`${hora}:${minutos}`)
+        const horarioFuncionamento = {
+            semana: {
+                inicio: { hora: 10, minutos: 30 },
+                fim: { hora: 21, minutos: 30 }
+            },
+            fimDeSemana: {
+                inicio: { hora: 10, minutos: 0 },
+                fim: { hora: 22, minutos: 0 }
             }
+            
+        };
+
+        const horarioAberturaSemana = new Date();
+        horarioAberturaSemana.setHours(horarioFuncionamento.semana.inicio.hora);
+        horarioAberturaSemana.setMinutes(horarioFuncionamento.semana.inicio.minutos);
+
+        const horarioFechamentoSemana = new Date();
+        horarioFechamentoSemana.setHours(horarioFuncionamento.semana.fim.hora);
+        horarioFechamentoSemana.setMinutes(horarioFuncionamento.semana.fim.minutos);
+
+        const horarioAberturaFimDeSemana = new Date();
+        horarioAberturaFimDeSemana.setHours(horarioFuncionamento.fimDeSemana.inicio.hora);
+        horarioAberturaFimDeSemana.setMinutes(horarioFuncionamento.fimDeSemana.inicio.minutos);
+
+        const horarioFechamentoFimDeSemana = new Date();
+        horarioFechamentoFimDeSemana.setHours(horarioFuncionamento.fimDeSemana.fim.hora);
+        horarioFechamentoFimDeSemana.setMinutes(horarioFuncionamento.fimDeSemana.fim.minutos);
+
+        if (
+            (diaSemana >= 1 && diaSemana <= 5 && hora >= horarioAberturaSemana.getHours() && hora <= horarioFechamentoSemana.getHours()) ||
+            ((diaSemana === 0 || diaSemana === 6) && hora >= horarioAberturaFimDeSemana.getHours() && hora <= horarioFechamentoFimDeSemana.getHours())
+        ) {
+            this.setState({ isOpen: true });
         }
+    }
 
-        // Verificar se é segunda a sexta
-        if (day >= 1 && day <= 5) {
-            if ((hours === 10 && minutes >= 30) || (hours === 21 && minutes >= 30)) {
-                return true;
-            }
-        }
+    render() {
+        const { isOpen } = this.state;
 
-        return false;
-    };
-    return (
-        <div className='HorariosFuncionamento'>
-            <h2>Horários de Funcionamento:</h2>
-            <ul>
-                <li><span className="horarios">Segunda a Sexta - 10:30 às 21:30</span></li>
-                <li><span className="horarios"> Sábado e Domingo - 10:00 às 22:00</span></li>
-            </ul>
-
-            <span style={{ backgroundColor: isOpen ? 'green' : 'red', color: 'white', padding: '5px' }}>{isOpen ? 'Aberto!' : 'Fechado!'}</span>
-        </div>
-    );
-
+        return (
+            <div className='HorariosFuncionamento'>
+                <h2>Horários de Funcionamento:</h2>
+                <ul>
+                    <li><span className="horarios">Segunda a Sexta - 10:30 às 21:30</span></li>
+                    <li><span className="horarios"> Sábado e Domingo - 10:00 às 22:00</span></li>
+                </ul>
+               
+                <span style={{ backgroundColor: isOpen ? 'green' : 'red', color: 'white', padding: '5px' }}>{isOpen ? 'Aberto!' : 'Fechado!'}</span>
+            </div>
+        );
+    }
 }
 
 export default Momento;
