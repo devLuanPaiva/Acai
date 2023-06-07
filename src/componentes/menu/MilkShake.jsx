@@ -44,9 +44,9 @@ const MilkShake = ({ adicionarItem }) => {
                             <ul>
                                 {item.opcoes.map((opcao, opcaoIndex) => (
                                     <li key={opcaoIndex}>
-                                        {opcao.nome} <br /> {opcao.valor.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}
+                                        {opcao.nome} <br /><span className='preco'> {opcao.valor.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</span>
                                         <br />
-                                        <button onClick={() => selecionarItem(opcao)} className="adicionar"> Comprar</button>
+                                        <button onClick={() => selecionarItem(opcao)} className="adicionar"> Adicionar ao Carrinho</button>
                                     </li>
                                 ))}
                             </ul>

@@ -87,10 +87,10 @@ const MontarAcai = () => {
     }, [selectedOption, selectedExtras, selectedCremes])
     const enviarAcai = () => {
         console.log(acaiMontado);
-        const mensagem = `AÇAÍ MONTADO: \n\nTipo: ${acaiMontado.selectedOption.size}\nAdicionais: ${acaiMontado.selectedExtras} \n`;
+        const mensagem = `AÇAÍ MONTADO: \n\nTipo: ${acaiMontado.selectedOption.size}\nAdicionais: ${acaiMontado.selectedExtras}\nValor: ${acaiMontado.selectedOption.valor.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}  \n\n`;
         let mensagemCreme = '';
         if (acaiMontado.selectedCremes != null) {
-            mensagemCreme = `Creme: ${acaiMontado.selectedCremes.nome}`;
+            mensagemCreme = `Creme: ${acaiMontado.selectedCremes.nome}\nValor: ${acaiMontado.selectedCremes.valor.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`;
         }
         const numeroWhatsApp = '+558498088539';
         const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem + mensagemCreme)}`;
@@ -172,6 +172,7 @@ const MontarAcai = () => {
                     </div>
                 )}
                 <button onClick={enviarAcai}>Enviar Açaí</button>
+                <p>OBS: O açaí montado não vai para o carrinho, ele vai direto para o nosso Whatsapp.</p>
             </main>
             <Footer/>
         </React.Fragment>

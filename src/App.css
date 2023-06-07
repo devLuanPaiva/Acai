@@ -6,8 +6,30 @@ main {
   width: 100%;
   height: 100%;
 }
+.remover {
+  background-color: #ff4444;
+  border: 1px solid #ff4444;
+  color: #fff;
+  border-radius: 4px;
+  padding: 8px 16px;
+  cursor: pointer;
+}
 
 .adicionar {
+  background-color: #4caf50;
+  border: 1px solid #4caf50;
+  color: #fff;
+  border-radius: 4px;
+  padding: 8px 16px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.adicionar:hover,
+.remover:hover {
+  opacity: 0.8;
+}
+/* .adicionar {
   background-color: #0091ea;
   border: 1px solid #0091ea;
   color: white;
@@ -36,7 +58,7 @@ main {
 .remover:hover{
   cursor: pointer;
   background-color: #ff691ede;
-}
+} */
 main li {
   list-style-type: none;
-}
+} 
