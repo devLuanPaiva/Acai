@@ -164,7 +164,7 @@ const MontarAcai = () => {
                                             checked={selectedCremes === itemCreme}
                                             onChange={() => handleCreme(itemCreme)}
                                         />
-                                        <label htmlFor={itemCreme.nome}>{itemCreme.nome} - {itemCreme.valor.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</label>
+                                        <label htmlFor={itemCreme.nome}>{itemCreme.nome}</label>
                                     </div>
 
                                 ))}
