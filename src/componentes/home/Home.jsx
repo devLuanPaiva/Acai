@@ -4,6 +4,7 @@ import Header from "../header/Header"
 import Navegacao from "../navegacao/Navegacao.jsx";
 import Footer from '../footer/Footer';
 
+import ImgGuaracai from "../../imagens/guaracai1.png"
 import Img from "../../imagens/copo.png"
 import "./Home.css"
 const Home = ({ adicionarItem }) => {
@@ -13,7 +14,7 @@ const Home = ({ adicionarItem }) => {
             ingredientes: ['Açaí,', 'Leite em Pó,', 'Guaraná em Pó,', 'Guaraná Líquido,', 'Amendoim.'],
             valor: 10.00,
             quantidade: 1,
-            imagem: `${Img}`
+            imagem: `${ImgGuaracai}`
         },
         {
             nome: 'Açaí Sensação - 300ml',
