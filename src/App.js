@@ -17,9 +17,13 @@ function App() {
       <Routes>
         <Route path="/" element={<Home adicionarItem={adicionarItem} />} />
         {/* <Route path='/bebidas' element={<Bebidas adicionarItem={adicionarItem}/>} /> */}
+
         <Route path='/milk-shake' element={<MilkShake adicionarItem={adicionarItem}/>} />
+
         <Route path="/carrinho" element={<Carrinho itens={itensSelecionados} />} />
+
         <Route path='/montar_acai' element={<MontarAcai/>} />
+        
         <Route path='*' element={<Home />} />
       </Routes>
     </Router>

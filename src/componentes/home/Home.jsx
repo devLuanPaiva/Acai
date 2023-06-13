@@ -4,7 +4,7 @@ import Header from "../header/Header"
 import Navegacao from "../navegacao/Navegacao.jsx";
 import Footer from '../footer/Footer';
 
-import Img from "../../imagens/logo.png"
+import Img from "../../imagens/copo.png"
 import "./Home.css"
 const Home = ({ adicionarItem }) => {
     const itens = [

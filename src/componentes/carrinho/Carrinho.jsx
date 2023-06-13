@@ -7,6 +7,12 @@ import Footer from '../footer/Footer';
 const Carrinho = ({ itens }) => {
     const [carrinhoItens, setCarrinhoItens] = useState(itens);
     const [valorTotal, setValorTotal] = useState(0);
+    // const [nome, setNome] = useState()
+    // const [cidade, setCidade] = useState()
+    // const [numero, setNumero] = useState()
+    // const [rua, setRua] = useState()
+    // const [bairro, setBairro] = useState()
+    // const [proximidade, setproximidade] = useState()
 
     useEffect(() => {
         const calcularValorTotal = () => {
@@ -73,6 +79,9 @@ const Carrinho = ({ itens }) => {
                 </section>
                 <span className="valorTotal">Valor Total:<span> {valorTotal.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</span></span>
                 <br />
+                <section className='formEndereco'>
+
+                </section>
                 <button onClick={enviarMensagemWhatsApp} className='adicionar'>Finalizar Compra</button> 
             </main>
             <Footer/>
