@@ -13,6 +13,9 @@ const Navegacao = () => {
           <Link className="opcoesNav" to="/montar_acai">
             Montar Açaí
           </Link>
+          <Link className="opcoesNav" to="/combos">
+            Combos
+          </Link>
           <Link className="opcoesNav" to="/milk-shake">
             Milk Shake
           </Link>

@@ -6,6 +6,7 @@ import Home from './componentes/home/Home';
 import Carrinho from './componentes/carrinho/Carrinho';
 import MontarAcai from './componentes/menu/MontarAcai';
 import MilkShake from './componentes/menu/MilkShake'
+import Combos from './componentes/menu/Combos';
 function App() {
   const [itensSelecionados, setItensSelecionados] = useState([]);
 
@@ -23,6 +24,8 @@ function App() {
         <Route path="/carrinho" element={<Carrinho itens={itensSelecionados} />} />
 
         <Route path='/montar_acai' element={<MontarAcai/>} />
+        
+        <Route path='/combos' element={<Combos/>} />
         
         <Route path='*' element={<Home />} />
       </Routes>
