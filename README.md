@@ -1,70 +1,35 @@
-# Getting Started with Create React App
+<h1>Açaí Point - Cardápio Online em React.js</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+O Açaí Point é um projeto desenvolvido em React.js com o objetivo de criar um cardápio online para um ponto de venda de açaí. Essa aplicação permite aos usuários montarem seus pedidos personalizados de açaí e enviá-los diretamente para o WhatsApp do estabelecimento.
 
-## Available Scripts
+<h2>Principais Recursos</h2>
 
-In the project directory, you can run:
++ Cardápio Online: Os clientes podem acessar o cardápio completo do Açaí Point de forma rápida e fácil, diretamente na plataforma.
 
-### `npm start`
++ Monte seu Açaí: Oferecendo total liberdade de escolha, os usuários podem montar o seu açaí personalizado. Eles têm a opção de selecionar o tipo de açaí desejado e adicionar diversos complementos disponíveis.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
++ Carrinho de Compras: Os itens selecionados são adicionados ao carrinho de compras, onde os usuários podem revisar seus pedidos antes de finalizá-los.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
++ Integração com WhatsApp: Após montar o seu açaí e revisar o pedido, os clientes podem enviar diretamente o pedido para o WhatsApp do Açaí Point para realizar o pagamento e combinar a entrega ou retirada.
 
-### `npm test`
+<h3>Como Contribuir</h3>
+Se você deseja contribuir para o desenvolvimento do projeto Açaí Point, siga os passos abaixo:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Faça um fork deste repositório e clone-o para o seu ambiente de desenvolvimento.
+Instale as dependências do projeto usando o comando: npm install.
+2. Crie uma branch para as suas alterações: git checkout -b minha-feature.
+3. Faça as modificações desejadas e commit para a sua branch: git commit -m "Minha feature: Descrição das alterações".
+4. Envie as suas alterações para o seu repositório remoto: git push origin minha-feature.
+5. Envie as suas alterações para o seu repositório remoto: git push origin minha-feature.
+6. Abra um Pull Request para que possamos avaliar as suas mudanças e incorporá-las ao projeto.
+<h3>Licença</h3>
+Este projeto está licenciado sob a Licença MIT - consulte o arquivo LICENSE.md para obter mais detalhes.
 
-### `npm run build`
+<h3>Agradecimentos</h3>
+Gostaríamos de agradecer a todos os contribuidores que tornaram este projeto possível e todos aqueles que estão contribuindo para torná-lo ainda melhor!
+Abra um Pull Request para que possamos avaliar as suas mudanças e incorporá-las ao projeto.
+Licença
+Este projeto está licenciado sob a Licença MIT - consulte o arquivo LICENSE.md para obter mais detalhes.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Agradecimentos
+Gostaríamos de agradecer a todos os contribuidores que tornaram este projeto possível e todos aqueles que estão contribuindo para torná-lo ainda melhor!
